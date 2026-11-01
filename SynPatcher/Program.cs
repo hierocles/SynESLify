@@ -23,12 +23,12 @@ namespace SynCOBJ
             var fidcheck = state.PatchMod.EnumerateMajorRecords()
                 .Where(x => x.FormKey.ModKey == state.PatchMod.ModKey)
                 .Select(x => x.FormKey.ID)
-                .DefaultIfEmpty(0)
+                .DefaultIfEmpty(0u)
                 .Max() <= 0x000FFFFF;
             if (state.PatchMod.ModHeader.Stats.NumRecords - overrides < 4096 && fidcheck)
             {
                 Console.WriteLine($"ESLIfing patch stack with {overrides} overrides and {state.PatchMod.ModHeader.Stats.NumRecords - overrides} new records");
-                state.PatchMod.ModHeader.Flags |= SkyrimModHeader.HeaderFlag.LightMaster;
+                state.PatchMod.IsSmallMaster = true;
             }
         }
     }
