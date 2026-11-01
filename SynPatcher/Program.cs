@@ -33,7 +33,6 @@ namespace SynCOBJ
                 Console.WriteLine($"ESLIfing patch stack with {overrides} overrides and {newRecordCount} new records");
                 state.PatchMod.IsSmallMaster = true;
             }
-    I think I see what your issue is.
-You seem to have installed the "pines only" version of Happy Little Trees but checked my HLT patch in the installer. That patch is designed for the full version of HLT. The Pines Only version does not need a patch.    }
+        }
     }
 }
