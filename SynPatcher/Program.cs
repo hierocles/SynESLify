@@ -27,7 +27,7 @@ namespace SynCOBJ
                 .Max() <= 0x000FFFFF;
             var totalLocal = state.PatchMod.EnumerateMajorRecords().Count(x => x.FormKey.ModKey == state.PatchMod.ModKey);
             var totalRecorded = state.PatchMod.EnumerateMajorRecords().Count();
-            var newRecordCount = Math.max(totalRecorded - overrides, 0);
+            var newRecordCount = Math.Max(totalRecorded - overrides, 0);
             if (state.PatchMod.ModHeader.Stats.NumRecords - overrides < 4096 && fidcheck)
             {
                 Console.WriteLine($"ESLIfing patch stack with {overrides} overrides and {newRecordCount} new records");
